@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<html>
+  <head>
+    <title>Калькулятор калорий</title>
+    <!--script type='text/javascript' src='/Обучение/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='/Обучение/jquery/jquery-migrate.min.js?ver=1.4.1'></script-->
+</head>
+<body>
+<div class="ui segment" style="margin-bottom: 20px;">
+<strong>РАСЧЕТ СУТОЧНОЙ ПОТРЕБНОСТИ В КАЛОРИЯХ</strong></p>
+<div style="margin:5px 0">
+<div style="display:inline-block;width: 100px;text-align:right;">Масса тела:</div>
+<div style="display:inline-block;"><input id="weight" type="text" name="weight" style="width:80px"> кг <span class="wrong_value" style="display:none;color: #EF9599; font-style: italic;">Пожалуйста, введите значение</span></div>
+</div>
+<div style="margin:5px 0">
+<div style="display:inline-block;width: 100px;text-align:right;">Рост:</div>
+<div style="display:inline-block;"><input id="height" type="text" name="height" style="width:80px"> см <span class="wrong_value" style="display:none;color: #EF9599; font-style: italic;">Пожалуйста, введите значение</span></div>
+</div>
+<div style="margin:5px 0">
+<div style="display:inline-block;width: 100px;text-align:right;">Возраст:</div>
+<div style="display:inline-block;"><input id="age" type="text" name="age" style="width:80px"> лет <span class="wrong_value" style="display:none;color: #EF9599; font-style: italic;">Пожалуйста, введите значение</span></div>
+</div>
+<div style="margin:5px 0">
+<div style="display:inline-block;width: 100px;text-align:right;">Пол:</div>
+<div style="display:inline-block;">
+<select id="gender" name="gender" style="width:87px"><option selected="selected" value="male">Мужской</option><option value="female">Женский</option></select>
+</div>
+</div>
+<div style="margin:5px 0">
+<div style="display:inline-block;width: 100px;text-align:right;">Активность:</div>
+<div style="display:inline-block;width: 470px;">
+<select id="activity" name="activity"><option value="1.2"> Малая активность (сидячий образ жизни)</option><option value="1.375"> Легкая активность (легкие тренировки 1–3 раза в неделю)</option><option selected="selected" value="1.55"> Умеренная активность (умеренные тренировки 3–5 раз в неделю)</option><option value="1.725"> Повышенная активность (интенсивные тренировки 6–7 раз в неделю)</option><option value="1.9"> Экстраактивность (очень интенсивные тренировки по 2 раза в день)</option></select>
+</div>
+</div>
+<div style="margin:5px 0">
+<div style="margin-top: 15px;"><button onclick="sum()">Получить результат</button> <div onload="sum()"><strong style="display: non;">ВАШ РЕЗУЛЬТАТ: <span id="bmr_result"></span> ККАЛ В ДЕНЬ</strong></div></div>
+</div>
+</div>
+<p><script>
+function sum(){
+var b = document.getElementById("weight").value;
+var c = document.getElementById("height").value;
+var d = document.getElementById("age").value;
+var e = document.getElementById("activity").value;
+var gender = document.getElementById('gender').value;
+if (gender == 'male') {
+ 	var a = ((66 + (13.7 * b) + (5 * c) - (6.8 * d))*e);
+	} else {
+		if (gender == 'female') {
+  		a = ((655 + (9.6 * b) + (1.8 * c) - (4.7 * d))*e);
+		};
+};
+var bmr = a;
+document.getElementById('bmr_result').innerHTML=Math.round(bmr);
+}
+</script></p>
+</body>
+</html>
