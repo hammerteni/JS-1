@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Привет JS</title>
+</head>
+<body>
+
+<script type="text/javascript"> 
+// 1 вариант
+var i = "#";
+	while (i.length <=7 ) {
+	    console.log(i);
+	    i += "#";
+	}
+// 2 вариант
+	for (var i = '#'; i.length <= 7; i +='#') {
+		console.log(i);
+	}
+// 3 вариант
+var n = '#';
+	for (var i = 1; i <= 7; i++) {	
+		console.log(n);
+		n += '#';
+	}
+	
+// еще пример
+function getADownArrowOf(n) {
+	    for (var i = n; i >= 1; i -= 2) {
+	        var a = "";
+	        for (var j = 0; j <= i / 2; j++) a += (j + 1) % 10;
+	        for (var j = i / 2 | 0; j--;) a += (j + 1) % 10;
+	        document.write(a + "<br>")
+	    }
+	};
+	getADownArrowOf(33);
+
+var result = "";
+	for (var x = 1; x <= 8; x++) {
+		for (var y = 1; y <= 8; y++) {			   
+	  result += (x % 2 == y % 2) ? "#" : " "; 
+	  }	 
+	  result += "\n";
+	}	 
+	console.log(result);
+
+
+var result = "\n";
+	for (var x = 1; x <= 8; x++) {
+		if (x % 2 == 0) {
+			result = 'R';
+		} else {
+			result = '#';
+		}
+		if (true) {}
+		result += "\n";
+	}	 
+	console.log(result);
+
+// решил с помощью интернета, а хочу сам решать! Про перенос строк, про их длинну хотелось бы слышать на уроках. Я хочу научиться программировать, а не гуглить...
+
+
+for (var i = 1; i <= 20; i++) { 
+	var output = '';
+	if (i % 3 == 0) {
+		output += 'Fizz';
+	}
+	if (i % 5 == 0) {
+		output += 'Buzz';
+	}
+		console.log((output) ? output : i);
+	}
+
+
+</script>
+P.S. Анастасия, xотелось бы получать всю информацию и разъяснения на уроках. На основе которых можно выполнять домашнее задание. А приходится искать недостающую информацию в интернете, чтобы выполнить задание.
+</body>
+</html>
