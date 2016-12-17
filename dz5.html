@@ -34,17 +34,26 @@ function numObj(num){
       var obj={};
       return obj;
     } else {
-num = num.toString(10);
-var obj={};
-var digits=['единицы','десятки','сотни'];
-      for(var i=0; i<num.length; i++){
-        return obj[digits[i]];  
+	num = num.toString(10);
+	var digits=['единицы','десятки','сотни'];
+	var obj={};
+        for(var i=0; i<num.length; i++){
+		var n=num.charAt(i);
+       		return obj[digits[n]];  
       }  
     }
     return obj;
   }
 console.log(numObj(245));
-
+/*отдает в консоль по одной цифре. Вопрос, как увязать с предыдущей функцией?
+function numObj(num) {
+num = num.toString(10);
+      for(var i=0; i<num.length; i++){
+        var n=num.charAt(i); 
+       console.log(n);
+      }  
+  }
+console.log(numObj(245));*/
 </script>
 
 </body>
