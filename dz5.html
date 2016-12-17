@@ -38,14 +38,15 @@ function numObj(num){
 	var digits=['единицы','десятки','сотни'];
 	var obj={};
         for(var i=0; i<num.length; i++){
-		var n=num.charAt(i);
-       		return obj[digits[n]];  
+		var n;
+       		obj[digits[n]]=num.charAt(i);  
       }  
     }
     return obj;
   }
-console.log(numObj(245));
-/*отдает в консоль по одной цифре. Вопрос, как увязать с предыдущей функцией?
+console.log(numObj(245)); //получаю Object {undefined: "5"}- хрень какая-то
+	
+/*ниже отдает в консоль по одной цифре. Вопрос, как увязать с предыдущей функцией?
 function numObj(num) {
 num = num.toString(10);
       for(var i=0; i<num.length; i++){
