@@ -30,31 +30,22 @@ function numObj(num){
     if (isNaN(num)){
       console.log('Ошибка: параметр не является числом');
     } else if(num>999 || num<0){
-        console.log('Ошибка: допустимый диапазон 0-999');
+      console.log('Ошибка: допустимый диапазон 0-999');
       var obj={};
       return obj;
     } else {
 	num = num.toString(10);
 	var digits=['единицы','десятки','сотни'];
 	var obj={};
-        for(var i=0; i<num.length; i++){
-		var n;
-       		obj[digits[n]]=num.charAt(i);  
-      }  
+        	for(var i=0; i<num.length; i++){
+		var n=num.charAt(i);
+        	obj[digits[i]]=n;  
+     		 }  
     }
     return obj;
   }
-console.log(numObj(245)); //получаю Object {undefined: "5"}- хрень какая-то
-	
-/*ниже отдает в консоль по одной цифре. Вопрос, как увязать с предыдущей функцией?
-function numObj(num) {
-num = num.toString(10);
-      for(var i=0; i<num.length; i++){
-        var n=num.charAt(i); 
-       console.log(n);
-      }  
-  }
-console.log(numObj(245));*/
+console.log(numObj(245)); 
+	/*Вот теперь правильно: Object {сотни: "2", десятки: "4", единицы: "5"}*/
 </script>
 
 </body>
