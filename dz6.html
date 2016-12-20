@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Привет JS</title>
+</head>
+<body>
+
+<script type="text/javascript"> 
+
+//1. Объекты могут быть использованы для построения различных структур данных. Часто встречающаяся структура – список (не путайте с массивом). Список – связанный набор объектов, где первый объект содержит ссылку на второй, второй – на третий, и т.п. 
+// Не понятно
+var list = {
+  value: 1,
+  rest: {
+    value: 2,
+    rest: {
+      value: 3,
+      rest: null
+    }
+  }
+};
+// 2. Напишите две функции, reverseArray и reverseArrayInPlace. Первая получает массив как аргумент и выдаёт новый массив, с обратным порядком элементов. Вторая работает как оригинальный метод reverse – она меняет порядок элементов на обратный в том массиве, который был ей передан в качестве аргумента. Не используйте стандартный метод reverse.
+
+function reverseArray (array) {
+  var newArray = [];
+
+  for (var i=0; i<array.length; i++) {
+    newArray.push(array[i]);
+  }
+  newArray.reverse();
+
+  return newArray;
+}
+
+function reverseArrayInPlace(array) {
+  var temp = [];
+  for (var i=array.length-1; i>=0; i--) {
+    temp.push(array[i]);
+  }
+  array = temp;
+  return array;
+}
+
+console.log(reverseArray(["A", "B", "C", "D", "E"]));
+console.log(reverseArrayInPlace([1,2,3,4,5,6]));
+
+// 3. Реализовать функцию pick(obj, keys), которая принимает аргументами объект и массив строк (названия ключей). Возвращает новый объект, куда вошли все ключи, указанные в массиве keys,  и соответствующие значения из объекта obj. Если в объекте obj, нет ключа, указанного в массиве keys, в результирующем объекте этот ключ не должен присутствовать. 
+
+//
+
+</script>
+
+</body>
+</html>
